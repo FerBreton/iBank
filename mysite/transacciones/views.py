@@ -1,18 +1,20 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
-from django.views import View
-from .forms import *
-from .models import *
+from django.views import View, generic
+from .forms import TransactionForm
+from .models import Transaction
 from django.contrib import messages
 import datetime
 
 # Create your views here.
 
+class TransactionList(generic.ListView):
+    model = Transaction
+
 class Home(View):
     def get(self, request):
         form = TransactionForm()
-        transacciones = Transaction.objects.all()
-        context = {'form': form, 'transacciones': transacciones}
+        context = {'form': form}
         return render(request, 'index.html', context)
 
     def post(self, request):

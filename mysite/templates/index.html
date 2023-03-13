@@ -12,30 +12,4 @@
   </form>
 
   <br><br><br>
-
-  <div>
-    <h1>Transacciones</h1>
-    <table class="table">
-      <thead>
-        <tr>
-          <th scope="col">#</th>
-          <th scope="col">Cantidad</th>
-          <th scope="col">Fecha y hora</th>
-          <th scope="col">Tipo</th>
-          <th scope="col">Cuenta</th>
-        </tr>
-      </thead>
-      <tbody>
-        {% for t in transacciones %}
-        <tr>
-          <th scope="row">{{ t.id }}</th>
-          <td>{{ t.amount }}</td>
-          <td>{{ t.timestamp }}</td>
-          <td>{{ t.type }}</td>
-          <td>{{ t.idUser }}</td>
-        </tr>
-        {% endfor %}
-      </tbody>
-    </table>
-  </div>
 {% endblock %}
