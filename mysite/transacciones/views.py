@@ -15,7 +15,7 @@ class Home(View):
     def get(self, request):
         form = TransactionForm()
         context = {'form': form}
-        return render(request, 'index.html', context)
+        return render(request, 'transacciones/transacciones.html', context)
 
     def post(self, request):
         form = TransactionForm(request.POST)
