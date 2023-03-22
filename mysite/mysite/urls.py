@@ -21,7 +21,7 @@ urlpatterns = [
     # Transacciones
     path('transacciones/', include('transacciones.urls')),
     # Cuentas 
-    #path('cuentas/', include('cuentas.urls')),
+    path('cuentas/', include('cuentas.urls')),
     # Login - Users
     path('login/', include('login.urls')),
 ]
