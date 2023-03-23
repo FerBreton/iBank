@@ -9,7 +9,7 @@ class Contact(models.Model):
 class Account(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     numAccount = models.IntegerField()
-    saldo = models.IntegerField(default=0)
+    saldo = models.FloatField(default=0)
     pin = models.CharField(max_length=4, default=0000)
     contact = models.ManyToManyField(Contact)
     
