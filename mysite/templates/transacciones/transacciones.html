@@ -8,7 +8,7 @@
   <h1>Ingresa los datos solicitados</h1>
   <form method="post">
     {% csrf_token %}
-    {{form}}
+    {{ form|crispy }}
     <br><br>
     <button type="submit" class="btn btn-secondary btn-lg">Realizar transacción</button>
   </form>
