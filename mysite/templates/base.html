@@ -24,7 +24,7 @@
                 <a class="nav-link" href="{% url 'transacciones' %}">Transacciones</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="{% url 'transaction_list' %}">History Transacciones</a>
+                <a class="nav-link" href="{% url 'transaction_list' %}">History Transacciones</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="{% url 'adduser' %}">Agregar Usuario</a>
@@ -41,6 +41,8 @@
         </div>
       </nav>
     {% endblock %}
+
+    {% include "messages.html" %}
 
     <div class="container">
         <div id="main">
