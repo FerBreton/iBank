@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+
+{% block title %} Transacciones {% endblock %}
+
+{% load crispy_forms_tags %}
+
+{% block content %} 
+  <h1>Ingresa los datos solicitados</h1>
+  <form method="post">
+    {% csrf_token %}
+    {{ form.amount.label_tag|crispy }}
+    {{ form.amount|crispy }}
+    {{ form.type.label_tag|crispy }}
+    {{ form.type|crispy }}
+    {{ form.idUser.label_tag|crispy }}
+    {{ form.idUser|crispy }}
+    <br><br>
+    <button class="btn btn-success" data-toggle="modal" data-target="#ventanaVer">Realizar transacción</button>
+
+    <div class="modal fade" id="ventanaVer" tabindex="-1" role="dialog" aria-labelledby="titulo" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 id="titulo">Ingresa PIN de confirmación</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            {{ form.pin|crispy }}
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="submit" class="btn btn-secondary btn-lg">Confirmar transacción</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+
+  <br><br><br>
+{% endblock %}
+
+<!--
+
+  
+
+  <br><br><br>-->
