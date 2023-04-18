@@ -18,11 +18,11 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 # copy entrypoint
 COPY ./entrypoint.sh .
-RUN sed -i 's/\r$//g' /usr/src/app/entrypoint.sh
-RUN chmod +x /usr/src/app/entrypoint.sh
+RUN sed -i 's/\r$//g' /usr/src/mysite/entrypoint.sh
+RUN chmod +x /usr/src/mysite/entrypoint.sh
 
 # copy project
 COPY . .
 
 # run entrypoint
-ENTRYPOINT [ "/usr/src/app/entrypoint.sh" ]
+ENTRYPOINT [ "/usr/src/mysite/entrypoint.sh" ]
